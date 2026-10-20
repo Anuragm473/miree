@@ -46,7 +46,7 @@ const config = {
   // Scene 3 – photos. Add as many as you like.
   memoriesTitle: 'Our little moments',
   photos: [
-    { src: 'photos/1.jpeg', caption: 'The day we first talked. I was nervous. You weren\'t.', date: '24th January 2026' },
+    { src: 'photos/1.jpeg', caption: 'The day we first talked. I was nervous. You weren\'t.', date: '25th January 2026' },
     { src: 'photos/2.jpeg', caption: 'My favourite photo of you.', date: ':)' },
     { src: 'photos/3.jpeg', caption: 'Our first video call that lasted for hours.', date: '18th March 2026' },
     { src: 'photos/4.jpeg', caption: 'You, being you.', date: 'Add a date' },
