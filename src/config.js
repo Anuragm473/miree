@@ -46,12 +46,12 @@ const config = {
   // Scene 3 – photos. Add as many as you like.
   memoriesTitle: 'Our little moments',
   photos: [
-    { src: 'photos/1.jpeg', caption: 'The day we first talked. I was nervous. You weren\'t.', date: '25th January 2026' },
-    { src: 'photos/2.jpeg', caption: 'My favourite photo of you.', date: ':)' },
-    { src: 'photos/3.jpeg', caption: 'Our first video call that lasted for hours.', date: '18th March 2026' },
-    { src: 'photos/4.jpeg', caption: 'You, being you.', date: 'Add a date' },
-    { src: 'photos/5.jpeg', caption: 'Us, one day soon, in the same frame.', date: ':)' },
-    { src: 'photos/6.jpeg', caption: 'First time where I heard I love you too in person.', date: '11th March 2026' },
+    { src: '/photos/1.jpeg', caption: 'The day we first talked. I was nervous. You weren\'t.', date: '25th January 2026' },
+    { src: '/photos/2.jpeg', caption: 'My favourite photo of you.', date: ':)' },
+    { src: '/photos/3.jpeg', caption: 'Our first video call that lasted for hours.', date: '18th March 2026' },
+    { src: '/photos/4.jpeg', caption: 'You, being you.', date: ':)' },
+    { src: '/photos/5.jpeg', caption: 'Us, one day soon, in the same frame.', date: ':)' },
+    { src: '/photos/6.jpeg', caption: 'First time where I heard I love you too in person.', date: '11th March 2026' },
   ],
 
   // Scene 4 – cake

@@ -53,11 +53,12 @@ export function Reasons({ config: { reasons, reasonsTitle }, next }) {
         {reasons.slice(k, k + 3).reverse().map((r, idx, arr) => {
           const top = idx === arr.length - 1
           return (
-            <motion.div key={r} className="card" style={{ zIndex: idx }}
+            <motion.div key={r} className="card"
               animate={{ scale: 1 - (arr.length - 1 - idx) * 0.05, y: (arr.length - 1 - idx) * 14, rotate: top ? 0 : (idx % 2 ? 2 : -2) }}
-              exit={{ x: 400, opacity: 0, rotate: 20 }}
-              drag={top ? 'x' : false} dragSnapToOrigin onDragEnd={(_, i) => Math.abs(i.offset.x) > 90 && advance()}
-              onClick={top ? advance : undefined}>
+              onPointerDown={top ? e => { e.currentTarget._x = e.clientX } : undefined}
+              onPointerUp={top ? e => { if (Math.abs(e.clientX - (e.currentTarget._x ?? e.clientX)) > 60) { e.currentTarget._swiped = true; advance() } } : undefined}
+              onClick={top ? e => { if (e.currentTarget._swiped) { e.currentTarget._swiped = false; return } advance() } : undefined}
+              style={{ zIndex: idx, touchAction: 'pan-y' }}>
               <span className="count">{reasons.indexOf(r) + 1} / {reasons.length}</span>
               <p>{r}</p>
             </motion.div>
@@ -85,7 +86,7 @@ export function Memories({ config: { photos, memoriesTitle }, next }) {
             <motion.div className="flipper" animate={{ rotateY: flip[i] ? 180 : 0 }} transition={{ duration: 0.6 }}>
               <div className="face">
                 {p.src ? <img src={url(p.src)} alt={p.caption} /> : <div className="ph"><span>📷</span>Your photo {i + 1}</div>}
-                <small>{p.date}</small>
+                <small>{p?.date}</small>
               </div>
               <div className="face back"><p>{p.caption}</p></div>
             </motion.div>
